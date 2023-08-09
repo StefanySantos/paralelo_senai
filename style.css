@@ -1,0 +1,275 @@
+/* Reset and General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Header */
+header {
+   
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.text_logo {
+    font-size: 14px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner_text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    font-size: 18px;
+}
+
+/* Text H1 */
+h1 {
+    text-align: center;
+    padding: 25px;
+}
+
+/* Cake */
+.cake {
+    margin: 3% auto;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake .image {
+    display: flex;
+    justify-content: space-between;
+    height: 320px;   
+    flex-wrap: wrap; /* Added */
+}
+
+.cake .image img {
+    max-width: calc(33.33% - 10px); /* Adjusted to fit three images with spacing */
+    margin-bottom: 20px; /* Added spacing between rows on mobile */
+}
+
+.cake_description {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Add spacing between items */
+}
+
+.cake_item {
+    margin-right: 20px; /* Add spacing between items if desired */
+}
+
+
+.cake_description p {
+    text-align: center;
+}
+
+/* Text H2 */
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Section Information */
+.information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+.information {
+    display: flex;
+    flex-direction: wrap;
+    gap: 20px; /* Add spacing between items */
+    margin-bottom: 40px; /* Gap at the bottom of the section */
+    justify-content: space-evenly;
+}
+.information .organization {   
+    text-align: center;
+}
+
+.information .words {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+button {
+    border-radius: 21px;
+    height: 30px;
+    width: 120px;
+    margin-top: 10px;
+    background: #AED9E0;
+}
+
+/* Footer */
+footer {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #5B3331;
+    color: #ffffff;
+}
+
+.contact img {
+    max-width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+/* Flexbox for side by side layout */
+.recipe {
+    display: flex;
+    flex-wrap: wrap;
+}
+.about {
+    display: flex;   
+}
+
+.recipe > div {
+    flex: 1;
+    padding: 20px;
+    margin: 0 50px; /* Add equal margin on both sides */
+    box-sizing: border-box;
+}
+
+.about > div {   
+    padding: 20px;
+    margin: 0 50px; /* Add equal margin on both sides */
+    box-sizing: border-box;
+}
+
+/* Media Queries */
+/* Media query for responsive phone screens */
+@media screen and (max-width: 768px) {
+    /* Style for header */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text_logo {
+        font-size: 12px;
+    }
+
+    header a {
+        display: block; /* Display the links as blocks */
+        padding: 15px 0;
+        text-align: center; /* Center-align the links */
+        position: relative; /* Add relative positioning */
+        z-index: 1; /* Ensure the links are brought forward */
+    }
+
+    /* Style for banner */
+    .banner {       
+        position: relative; /* Add relative positioning to allow z-index to work */
+        z-index: 0; /* Lower the z-index of the banner to ensure links are above */
+    }
+
+    .banner_text {
+        bottom: 10px;
+        font-size: 14px;
+    }
+
+    /* Style for .cake section */
+    .cake {
+        margin-top: 5%;
+    }
+
+    /* Style for .cake_description */
+    .cake_description {
+        display: block;
+        text-align: center;
+    }
+
+    .cake_item {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .cake_item img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .cake_item p {
+        text-align: center;
+    }
+
+    /* Style for .information .organization */
+    .information .organization {
+        margin-top: 20px;
+    }
+    .col-md-6,
+    .col-md-3,
+    .col-md-9 {
+        width: 100%; /* Make columns take full width on mobile */
+        margin-left: 0; /* Remove margin on mobile */
+        margin-right: 0; /* Remove margin on mobile */
+    }
+
+    /* Adjust image size for mobile */
+    .cake_recipe,
+    .about_recipe {
+        max-width: 100%; /* Make images responsive */
+        height: auto;
+    }
+    .about {
+        display: flex;
+        flex-wrap: wrap;      
+    }
+    .about > div {
+        flex: 1;
+        padding: 20px;
+        margin: 0 50px; /* Add equal margin on both sides */
+        box-sizing: border-box;
+    }
+  
+ 
+}
+
